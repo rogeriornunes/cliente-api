@@ -23,3 +23,41 @@ com o nome `clientedb`. Atualize o usuário e senha no arquivo `application.prop
 
     spring.datasource.username=root
     spring.datasource.password=softnunes
+
+
+## Iniciar a aplicação
+
+  Existem algumas formas de iniciar esta API
+
+    java -jar target/cliente-api.jar
+
+ou utilizando o maven
+
+    mvn spring-boot:run
+    
+ 
+## Criação de tabela (cliente) no clientedb
+
+Tabela cliente  será criada ao inciar aplicação pelo hibernate
+![image](https://github.com/rogeriornunes/cliente-api/assets/80980856/df50a51b-4553-4a75-8832-c21b4a7616ea)
+
+
+## Acessando o Adminer 4.8.1
+
+Caso sobe a imagem docker será possivel acessar o Adminer 4.8.1 via browser http://localhost:8081
+
+Dados de acesso:
+Sistema	: MySQL
+Servidor: mysql-db	
+Usuário: root
+Senha: softnunes	
+Base de dados: clientedb
+
+![image](https://github.com/rogeriornunes/cliente-api/assets/80980856/bd8385aa-47ee-4ea2-96ab-a14d404caf0e)
+
+
+## Criando a imagem Docker da API
+
+    docker build -t rogerioricardonunes/cliente-api:V1  .
+
+    docker push rogerioricardonunes/cliente-api:V1
