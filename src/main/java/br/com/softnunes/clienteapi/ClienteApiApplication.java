@@ -21,7 +21,7 @@ public class ClienteApiApplication {
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200","http://cliente-ui"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200","http://cliente-ui", "https://cliente-ui.herokuapp.com/"));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", ACCESS_CONTROL_ALLOW_ORIGIN, "Content-Type",
 				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
 				"Access-Control-Request-Method", "Access-Control-Request-Headers"));
