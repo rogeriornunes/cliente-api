@@ -62,7 +62,8 @@ Base de dados: clientedb
 
     docker push rogerioricardonunes/cliente-api:V1
     
-    ## Possíveis problemas
+ 
+## Possíveis problemas
 
 1. Banco de dados não iniciado
 ```
