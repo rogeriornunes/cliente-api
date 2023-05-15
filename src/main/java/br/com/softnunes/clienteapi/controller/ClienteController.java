@@ -2,8 +2,8 @@ package br.com.softnunes.clienteapi.controller;
 
 
 import br.com.softnunes.clienteapi.dto.AtualizarClienteRequest;
-import br.com.softnunes.clienteapi.dto.IncluirClienteRequest;
-import br.com.softnunes.clienteapi.dto.IncluirClienteResponse;
+import br.com.softnunes.clienteapi.dto.SalvarClienteRequest;
+import br.com.softnunes.clienteapi.dto.SalvarClienteResponse;
 import br.com.softnunes.clienteapi.model.Cliente;
 import br.com.softnunes.clienteapi.service.ClienteService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,10 +37,10 @@ public class ClienteController {
     }
 
     @PostMapping()
-    public ResponseEntity<IncluirClienteResponse> salvar(@RequestParam String clienteData) throws IOException {
-        final var incluirClienteRequest = mapper.readValue(clienteData, IncluirClienteRequest.class);
+    public ResponseEntity<SalvarClienteResponse> salvar(@RequestParam String clienteData) throws IOException {
+        final var incluirClienteRequest = mapper.readValue(clienteData, SalvarClienteRequest.class);
         var cliente = clienteService.salvar(incluirClienteRequest);
-        var clienteResponse = new IncluirClienteResponse();
+        var clienteResponse = new SalvarClienteResponse();
         BeanUtils.copyProperties(cliente, clienteResponse);
         return new ResponseEntity<>(clienteResponse, HttpStatus.CREATED);
     }

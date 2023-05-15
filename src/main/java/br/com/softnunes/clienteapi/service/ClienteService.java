@@ -2,7 +2,7 @@ package br.com.softnunes.clienteapi.service;
 
 
 import br.com.softnunes.clienteapi.dto.AtualizarClienteRequest;
-import br.com.softnunes.clienteapi.dto.IncluirClienteRequest;
+import br.com.softnunes.clienteapi.dto.SalvarClienteRequest;
 import br.com.softnunes.clienteapi.exception.ClienteCadastradoException;
 import br.com.softnunes.clienteapi.exception.ClienteNaoEncontradoException;
 import br.com.softnunes.clienteapi.model.Cliente;
@@ -32,7 +32,7 @@ public class ClienteService {
                 .orElseThrow(() -> new ClienteNaoEncontradoException("Cliente não encontrado " + id));
     }
 
-    public Cliente salvar(IncluirClienteRequest clienteRequest) {
+    public Cliente salvar(SalvarClienteRequest clienteRequest) {
         var data = Instant.now();
         var cliente = new Cliente();
         BeanUtils.copyProperties(clienteRequest, cliente);
